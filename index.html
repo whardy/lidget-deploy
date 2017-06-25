@@ -1,8 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- dependencies -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
     <!-- Latest compiled and minified CSS -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -63,6 +83,9 @@
     <h4>Robert and John Hogue<br>Walter Hardy<br>Nathan Iarve</h4>
     <hr />
     <h4>Special Shout Out to Columbus StartUp Weekend!</h4>
+    <hr />
+    <h5>Join our mailing list!</h5>
+    <a href="http://lidget.us16.list-manage.com/subscribe?u=f5562848e7ea1d36036493843&id=49e7705cde"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
   </div>
 </div>
 
@@ -82,7 +105,7 @@
             <h6>{{kit.description}}</h6>
             <h6>Price: ${{kit.cost}}</h6>
           </div>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post"
+          <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post"
             target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="SABFUZF2MYYUG">
@@ -103,7 +126,29 @@
             <img alt="" border="0"
             src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
             height="1">
-          </form>
+          </form> -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post"
+target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="SABFUZF2MYYUG">
+<table>
+<tr><td><input type="hidden" name="on0"
+value="Color">Color</td></tr><tr><td><select name="os0">
+<option value="White">White $9.99 USD</option>
+<option value="Red">Red $9.99 USD</option>
+<option value="Blue">Blue $9.99 USD</option>
+<option value="Glow in the dark">Glow in the dark $10.99 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" id="image"
+src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+border="0" name="submit" alt="PayPal - The safer, easier way to pay
+online!">
+<img alt="" border="0"
+src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+height="1">
+</form>
         </div>
       </div>
     </div>
