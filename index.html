@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- dependencies -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+    <!-- app -->
+    <link rel="stylesheet" href="assets/app.css">
+    <script type="text/javascript" src="assets/app.bundle.js"></script>
+  </head>
+  <body ng-app="app" ng-controller="MainController as MainCtrl">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+		<ul class="nav nav-tabs margin-left">
+      <li>
+        <a ng-click="route('home')">
+          <img class="nav-logo" src="assets/logo.png" />
+        </a>
+      </li>
+    </ul>
+	</div>
+  <div class="collapse navbar-collapse right" uib-collapse="isNavCollapsed">
+		<ul class="nav nav-tabs">
+      <li><a ng-click="route('learn')">Learn</a></li>
+      <li><a ng-click="route('kits')">Kits</a></li>
+      <li><a ng-click="route('about')">About</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div ng-if="show('home')" class="row top-title">
+  <img class="home-logo" src="assets/logo.png" />
+  <p>Build, Customize, Learn</p>
+  <iframe width="700" height="400" src="https://www.youtube.com/embed/_9EaK3fES5A" frameborder="0" allowfullscreen></iframe>
+  <div class="row checkout">
+    <button type="button" class="btn btn-primary" ng-click="route('learn')">
+       Learn the science
+    </button>
+    <button type="button" class="btn btn-primary" ng-click="route('kits')">
+      Check out our products
+    </button>
+ </div>
+</div>
+
+<div ng-show="show('learn')" class="row top-title learn">
+  <h1>How Lidget works</h1>
+  <hr />
+  <img class="learn-pic" src="assets/learn.png" />
+</div>
+
+<div ng-if="show('about')" class="row top-title about">
+  <h1>About Us</h1>
+  <hr />
+  <div class="jumbotron padding">
+    <h3>Our Mission</h3>
+    <h5>Lidget is more than just a fidget spinner. Our product is designed to challenge people to create, customize, and innovate by providing unique fidget tools that challenge the status quo. At our core we inspire builders. By providing tools to understand the physics behind a Fidget Spinner and then build it into their Lego creations.</h5>
+    <hr />
+    <h3>Our Founders</h3>
+    <h4>Robert and John Hogue<br>Walter Hardy<br>Nathan Iarve</h4>
+    <hr />
+    <h4>Special Shout Out to Columbus StartUp Weekend!</h4>
+  </div>
+</div>
+
+<div ng-if="show('kits')" class="row top-title kits">
+  <h1>Kits</h1>
+  <hr />
+
+  <div class="jumbotron kit" ng-repeat="kit in kits">
+    <div class="container">
+      <div class="media">
+        <div class="media-left media-middle">
+          <a href="#"><img class="media-object" src="{{kit.image}}" /></a>
+        </div>
+        <div class="media-body">
+          <div class="media-left left-align">
+            <h4>{{kit.name}}</h4>
+            <h6>{{kit.description}}</h6>
+            <h6>Price: ${{kit.cost}}</h6>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post"
+            target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="SABFUZF2MYYUG">
+            <table>
+            <tr><td><input type="hidden" name="on0"
+            value="Color">Color</td></tr><tr><td><select name="os0">
+            <option value="White">White $11.99 USD</option>
+            <option value="Red">Red $11.99 USD</option>
+            <option value="Blue">Blue $11.99 USD</option>
+            <option value="Glow in the dark">Glow in the dark $13.99 USD</option>
+            </select> </td></tr>
+            </table>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" id="image"
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+            border="0" name="submit" alt="PayPal - The safer, easier way to pay
+            online!">
+            <img alt="" border="0"
+            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+            height="1">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
